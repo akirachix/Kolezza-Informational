@@ -104,14 +104,6 @@ const Navbar = () => {
               About
             </a>
             <a
-              href="#product"
-              onClick={(e) => handleScroll(e, 'product')}
-              className={`px-4 py-2 text-xl text-black hover:font-bold hover:border-b-2 w-fit hover:border-black cursor-pointer 
-              ${activeSection === 'about' ? 'font-bold border-b-2 border-black' : ''}`}
-            >
-              Product
-            </a>
-            <a
               href="#testimonials"
               onClick={(e) => handleScroll(e, 'testimonials')}
               className={`px-4 py-2 text-xl text-black hover:font-bold hover:border-b-2 w-fit hover:border-black cursor-pointer 

@@ -15,6 +15,8 @@ const config: Config = {
         'light-sky-blue': '#A5DAF7', 
         'custom-blue': '#052049',
         customBlue: '#A5DAF7', 
+        customRed: '#DA1111',
+        customGreen:'#90BD31',
         customDarkBlue: '#052049'
       },
       fontFamily: {
