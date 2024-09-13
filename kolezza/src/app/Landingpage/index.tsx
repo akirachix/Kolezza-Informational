@@ -25,7 +25,7 @@ const Landingpage = () => {
                         <p className="text-lg im:text-2xl nh:text-2xl md:text-2xl lg:text-[28px] font-nunito text-black mb-8">
                             Sawatok is an affordable device designed for kids between the age of 4-6 years to help children communicate fluently by providing real-time feedback and support for their speech development.
                         </p>
-                        <button className="font-nunito im:text-bold im:px-20 im:py-5 nh:mb-40 sd:mb-20 font-semibold bg-customDarkBlue text-white py-4 md:py-3 lg:py-[15px] px-8 md:px-8 lg:px-[60px] text-sm md:text-md lg:text-lg rounded-[20px] mb-10 shadow-md">
+                        <button className="font-nunito im:text-bold im:px-20 im:py-5 nh:mb-0 sd:mb-20 font-semibold bg-customDarkBlue text-white py-4 md:py-3 lg:py-[15px] px-8 md:px-8 lg:px-[60px] text-sm md:text-md lg:text-lg rounded-[20px] mb-10 shadow-md">
                             Buy SawaTok
                         </button>
                     </div>
