@@ -22,7 +22,7 @@ const FaQs = () => {
   ];
 
   return (
-    <section className="max-w-6xl mx-auto py-12 px-4 bg-white">
+    <section id="faqs" className="max-w-6xl mx-auto py-12 px-4 bg-white">
       {/* Title */}
       <h1 className="text-center text-[26px] sm:text-[26px] md:text-[54px] lg:text-[54px] font-bold mb-6 mt-2 text-[#052049] font-nunito drop-shadow-[2px_2px_2px_rgba(0,0,0,0.5)]">
         Frequently Asked Questions
