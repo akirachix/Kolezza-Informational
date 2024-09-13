@@ -3,8 +3,8 @@ import Image from 'next/image';
 
 const Landingpage = () => {
     return (
-        <div id='landingpage' className="flex flex-col justify-between">
-            <div className="relative bg-customBlue min-h-screen overflow-hidden">
+        <div id='landingpage' className="flex flex-col justify-between ">
+            <div className="relative bg-customBlue min-h-screen overflow-hidden lg:px-8">
                 <div className="container mx-auto flex flex-col p-6 md:p-10
                  lg:flex-row items-center justify-between space-y-4 mt-6
                  lg:space-y-0 lg:space-x-4 lg:mt-28 nh:mt-4">
@@ -18,7 +18,7 @@ const Landingpage = () => {
                                 className="w-full h-auto im:w-[400px] im:mx-auto"
                             />
                         </div>
-                        <h1 className="text-2xl im:text-[23px] nh:text-3xl md:text-4xl lg:text-4xl font-nunito font-bold text-navy-900 leading-snug mb-6">
+                        <h1 className="text-2xl im:text-[23px] nh:text-3xl md:text-4xl lg:text-4xl text-custom-blue font-nunito font-bold leading-snug mb-6">
                             Your child's Journey to confident communication starts here.
                         </h1>
                         
@@ -63,7 +63,7 @@ const Landingpage = () => {
                             height={285}
                             className="mb-4 nh:mb-[0px] mx-auto max-w-[80%] md:max-w-[40%] lg:max-w-[70%]"
                         />
-                        <p className="text-[23px] nh:text-[22px] md:text-lg lg:text-[32px] font-nunito text-customDarkBlue font-semibold">
+                        <p className="text-[16px] sm:text-[16px] md:text-[24px] lg:text-[28px] mh:text-[18px] font-nunito text-customDarkBlue font-semibold">
                             Fun & Entertainment
                         </p>
                     </div>

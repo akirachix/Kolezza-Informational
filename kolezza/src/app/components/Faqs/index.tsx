@@ -22,7 +22,7 @@ const FaQs = () => {
   ];
 
   return (
-    <section id="faqs" className="max-w-6xl mx-auto py-12 px-4 bg-white">
+    <section id="faqs" className="max-w-6xl mx-auto py-12 px-8 bg-white">
       {/* Title */}
       <h1 className="text-center text-[26px] sm:text-[26px] md:text-[54px] lg:text-[54px] font-bold mb-6 mt-2 text-[#052049] font-nunito drop-shadow-[2px_2px_2px_rgba(0,0,0,0.5)]">
         Frequently Asked Questions
@@ -41,7 +41,7 @@ const FaQs = () => {
               <h2 className="font-bold text-[24px] sm:text-[24px] md:text-[30px] lg:text-[30px] font-nunito">
                 {faq.question}
               </h2>
-              <p className="text-gray-700 mt-1 sm:mt-1 md:mt-2 lg:mt-2 text-[15px] sm:text-[15px] md:text-[16px] lg:text-[16px] font-nunito">
+              <p className="mt-1 sm:mt-1 md:mt-2 lg:mt-2 text-[16px] sm:text-[16px] md:text-[24px] lg:text-[28px] mh:text-[18px] font-nunito">
                 {faq.answer}
               </p>
             </div>

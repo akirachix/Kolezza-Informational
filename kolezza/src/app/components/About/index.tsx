@@ -15,7 +15,7 @@ const SawaTokInfo = () => {
           <h2 className='text-customDarkBlue text-[24px] md:text-[36px] lg:text-[44px] nh:text-[26px] lg:mb-10 font-nunito antialiased font-bold drop-shadow-[3px_3px_6px_rgba(0,0,0,0.5)]'>
             An outstanding fluency journey
           </h2>
-          <p className='text-[16px] md:text-[24px] lg:text-[28px] nh:text-[18px] font-nunito'>
+          <p className='text-[16px] md:text-[24px] lg:text-[28px] nh:text-[24px] font-nunito'>
             Sawatok has different modules that improve the communication abilities of kids. The modules contain images and text that the kids should say out loud.
             After that, the kids are awarded points according to the improvement they have made so far.
           </p>
@@ -25,11 +25,11 @@ const SawaTokInfo = () => {
 
         <div className='mt-10 lg:mt-10'>
           <img src="/images/child.png" alt="child" className='w-full lg:w-[427px] h-auto ml-0 lg:ml-14 md:float-start' />
-          <div className='mt-6 lg:mt-32'>
+          <div className='mt-6 lg:mt-[34rem]'>
             <h1 className='text-customGreen text-[24px] md:text-[36px] lg:text-[44px] nh:text-[26px] lg:mb-10 font-nunito font-bold drop-shadow-[3px_3px_6px_rgba(0,0,0,0.5)]'>
               Unlock your child's full potential<span className='text-customDarkBlue'> in speaking fluently.</span>
             </h1>
-            <p className='text-[16px] md:text-[24px] lg:text-[28px] nh:text-[18px] font-nunito'>
+            <p className='text-[16px] md:text-[24px] lg:text-[28px] nh:text-[24px] font-nunito'>
               Your kids will now be able to interact with different modules after the speech therapist unlocks them and follows every adventure on speaking fluently.
               In addition to learning how to speak fluently, the parent can monitor their children's progress through the report issued by the speech therapist.
             </p>
