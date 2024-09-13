@@ -12,6 +12,11 @@ const Navbar = () => {
     setIsOpen(!isOpen);
   };
 
+  const handleScroll = (sectionId: string) => {
+    document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+
   return (
     <nav className="bg-light-sky-blue shadow-lg sticky top-0 w-full z-40" style={{ fontFamily: 'Nunito, sans-serif' }}>
       <div className="max-w-7xl mx-auto px-4">
@@ -44,30 +49,35 @@ const Navbar = () => {
           >
             <Link
               href="#home"
+              onClick={(e) => { e.preventDefault(); handleScroll('home'); }}
               className="px-4 py-2 text-xl text-black hover:font-bold hover:border-b-2 w-fit hover:border-black"
             >
               Home
             </Link>
             <Link
               href="#about"
+              onClick={(e) => { e.preventDefault(); handleScroll('about'); }}
               className="px-4 py-2 text-xl text-black hover:font-bold hover:border-b-2 w-fit hover:border-black"
             >
               About
             </Link>
             <Link
-              href="#"
+              href="#testimonials"
+              onClick={(e) => { e.preventDefault(); handleScroll('testimonials'); }}
               className="px-4 py-2 text-xl text-black hover:font-bold hover:border-b-2 w-fit hover:border-black"
             >
               Testimonials
             </Link>
             <Link
               href="#faqs"
+              onClick={(e) => { e.preventDefault(); handleScroll('faqs'); }}
               className="px-4 py-2 text-xl text-black hover:font-bold hover:border-b-2 w-fit hover:border-black"
             >
               FAQs
             </Link>
             <Link
               href="#contact"
+              onClick={(e) => { e.preventDefault(); handleScroll('contact'); }}
               className="px-4 py-2 text-xl text-black hover:font-bold hover:border-b-2 w-fit hover:border-black"
             >
               Contact
@@ -77,6 +87,7 @@ const Navbar = () => {
       </div>
     </nav>
   );
+
 };
 
 export default Navbar;

@@ -1,7 +1,13 @@
 
 import Image from 'next/image';
+import { RiFacebookLine } from "react-icons/ri";
+import { FaInstagram } from "react-icons/fa";
+import { MdOutlineMailOutline } from "react-icons/md";
+
+
 
 const Footer = () => {
+
     return (
         <footer className="mt-80">
            <div className="flex justify-center items-center">
@@ -40,13 +46,15 @@ const Footer = () => {
             </div>
 
             <div className="flex gap-8 lg:gap-12 justify-center lg:justify-start mt-6 mb-10 lg:mb-20">
-              <Image src="/images/instagramicon.png" alt="instagramicon" width={40} height={40} />
-              <Image src="/images/facebookicon.png" alt="facebookicon" width={40} height={40} />
-              <Image src="/images/emailicon.png" alt="emailicon" width={40} height={40} />
+            <FaInstagram className="text-6xl text-white bg-custom-blue rounded-full flex items-center justify-center p-2" />
+            <RiFacebookLine className="text-6xl text-white bg-custom-blue rounded-full flex items-center justify-center p-2" />
+            <MdOutlineMailOutline className="text-6xl text-white bg-custom-blue rounded-full flex items-center justify-center p-2" />
             </div>
           </div>
         </div>
         </footer>
+
+        
     );
 };
 

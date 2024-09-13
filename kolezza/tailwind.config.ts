@@ -12,7 +12,7 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
         'light-sky-blue': '#A5DAF7', 
-        customDarkBlue: '#052049',
+        'custom-blue': '#052049',
       },
       fontFamily: {
         nunito: ['Nunito'],
