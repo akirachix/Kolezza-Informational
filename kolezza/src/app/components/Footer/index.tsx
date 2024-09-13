@@ -9,7 +9,7 @@ import { MdOutlineMailOutline } from "react-icons/md";
 const Footer = () => {
 
     return (
-        <footer className="mt-80">
+        <footer id='contact' className="mt-40">
            <div className="flex justify-center items-center">
             <Image 
              src="/images/playfulkids.png" 

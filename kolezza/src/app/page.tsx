@@ -1,11 +1,14 @@
 import FaQs from "./components/Faqs";
+import Landingpage from './components/Landingpage';
+
 
 
 export default function Home() {
   return (
-    <main>
-         <FaQs/>
+    <div>
+      <Landingpage />
+      <FaQs/>
+    </div>
+  );
+}
 
-    </main>
-
-  )}

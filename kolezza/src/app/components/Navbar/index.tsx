@@ -1,21 +1,61 @@
-
 "use client";
-import Link from "next/link";
+
 import Image from 'next/image';
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { IoClose } from "react-icons/io5";
 import { MdMenu } from "react-icons/md";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('#landingpage');
+
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
-  const handleScroll = (sectionId: string) => {
-    document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
+    e.preventDefault();
+    console.log(`Trying to scroll to section: ${sectionId}`); 
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+      setActiveSection(sectionId);
+      setIsOpen(false);  
+    } else {
+      console.error(`Element with id "${sectionId}" not found`); 
+    }
   };
 
+  // Close menu when window is resized to larger than mobile breakpoint
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 640) {
+        setIsOpen(false);
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = ['landingpage', 'about', 'testimonials', 'faqs', 'contact'];
+      let currentSection = sections[0];
+
+      for (const section of sections) {
+        const element = document.getElementById(section);
+        if (element && window.scrollY >= element.offsetTop - 100) {
+          currentSection = section;
+        }
+      }
+
+      setActiveSection(currentSection);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
     <nav className="bg-light-sky-blue shadow-lg sticky top-0 w-full z-40" style={{ fontFamily: 'Nunito, sans-serif' }}>
@@ -31,14 +71,14 @@ const Navbar = () => {
             <button
               onClick={toggleMenu}
               className="text-black-500 hover:text-black-700 focus:outline-none focus:text-black-700"
-              title="menu"
+              aria-label={isOpen ? "Close menu" : "Open menu"}
             >
               {isOpen ? (
                 <IoClose className="text-slate-900 text-2xl h-10 p-2 w-10 rounded-full" />
               ) : (
                 <MdMenu className="text-slate-900 text-2xl h-10 p-2 w-10 rounded-full" />
               )}
-            </button>        
+            </button>
           </div>
 
           {/* Menu Links */}
@@ -47,49 +87,51 @@ const Navbar = () => {
               isOpen ? "flex flex-col fixed inset-x-0 top-16 bg-white shadow-lg text-left py-4 space-y-4 sm:relative sm:top-0 sm:shadow-none sm:py-0 sm:space-y-0" : "hidden sm:flex"
             }`}
           >
-            <Link
-              href="#home"
-              onClick={(e) => { e.preventDefault(); handleScroll('home'); }}
-              className="px-4 py-2 text-xl text-black hover:font-bold hover:border-b-2 w-fit hover:border-black"
+            <a
+              href="#landingpage"
+              onClick={(e) => handleScroll(e, 'landingpage')}
+              className={`px-4 py-2 text-xl text-black hover:font-bold hover:border-b-2 w-fit hover:border-black cursor-pointer 
+              ${activeSection === 'landingpage' ? 'font-bold border-b-2 border-black' : ''}`}
             >
               Home
-            </Link>
-            <Link
+            </a>
+            <a
               href="#about"
-              onClick={(e) => { e.preventDefault(); handleScroll('about'); }}
-              className="px-4 py-2 text-xl text-black hover:font-bold hover:border-b-2 w-fit hover:border-black"
+              onClick={(e) => handleScroll(e, 'about')}
+              className={`px-4 py-2 text-xl text-black hover:font-bold hover:border-b-2 w-fit hover:border-black cursor-pointer 
+              ${activeSection === 'about' ? 'font-bold border-b-2 border-black' : ''}`}
             >
               About
-            </Link>
-            <Link
+            </a>
+            <a
               href="#testimonials"
-              onClick={(e) => { e.preventDefault(); handleScroll('testimonials'); }}
-              className="px-4 py-2 text-xl text-black hover:font-bold hover:border-b-2 w-fit hover:border-black"
+              onClick={(e) => handleScroll(e, 'testimonials')}
+              className={`px-4 py-2 text-xl text-black hover:font-bold hover:border-b-2 w-fit hover:border-black cursor-pointer 
+              ${activeSection === 'testimonials' ? 'font-bold border-b-2 border-black' : ''}`}
             >
               Testimonials
-            </Link>
-            <Link
+            </a>
+            <a
               href="#faqs"
-              onClick={(e) => { e.preventDefault(); handleScroll('faqs'); }}
-              className="px-4 py-2 text-xl text-black hover:font-bold hover:border-b-2 w-fit hover:border-black"
+              onClick={(e) => handleScroll(e, 'faqs')}
+              className={`px-4 py-2 text-xl text-black hover:font-bold hover:border-b-2 w-fit hover:border-black cursor-pointer
+               ${activeSection === 'faqs' ? 'font-bold border-b-2 border-black' : ''}`}
             >
               FAQs
-            </Link>
-            <Link
+            </a>
+            <a
               href="#contact"
-              onClick={(e) => { e.preventDefault(); handleScroll('contact'); }}
-              className="px-4 py-2 text-xl text-black hover:font-bold hover:border-b-2 w-fit hover:border-black"
+              onClick={(e) => handleScroll(e, 'contact')}
+              className={`px-4 py-2 text-xl text-black hover:font-bold hover:border-b-2 w-fit hover:border-black cursor-pointer 
+              ${activeSection === 'contact' ? 'font-bold border-b-2 border-black' : ''}`}
             >
               Contact
-            </Link>
+            </a>
           </div>
         </div>
       </div>
     </nav>
   );
-
 };
 
 export default Navbar;
-
-
