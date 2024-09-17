@@ -19,7 +19,7 @@ const Landingpage = () => {
                             />
                         </div>
                         <h1 className="text-2xl im:text-[23px] nh:text-3xl md:text-4xl lg:text-4xl text-custom-blue font-nunito font-bold leading-snug mb-6">
-                            Your child's Journey to confident communication starts here.
+                            Your child&apos;s Journey to confident communication starts here.
                         </h1>
                         
                         <p className="text-lg im:text-2xl nh:text-2xl md:text-2xl lg:text-[28px] font-nunito text-black mb-8">
