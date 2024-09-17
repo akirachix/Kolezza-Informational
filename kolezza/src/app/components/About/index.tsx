@@ -33,7 +33,7 @@ const SawaTokInfo = () => {
           />
           <div className="mt-6 lg:mt-[3rem]">
             <h1 className="text-customGreen text-[24px] md:text-[36px] lg:text-[44px] nh:text-[26px] lg:mb-10 font-nunito font-bold drop-shadow-[3px_3px_6px_rgba(0,0,0,0.5)]">
-              Unlock your child's full potential<span className="text-customDarkBlue"> in speaking fluently.</span>
+              Unlock your child&apos;s full potential<span className="text-customDarkBlue"> in speaking fluently.</span>
             </h1>
             <p className="text-[16px] md:text-[24px] lg:text-[28px] nh:text-[24px] font-nunito">
               Your kids will now be able to interact with different modules after the speech therapist unlocks them and follows every adventure on speaking fluently.
