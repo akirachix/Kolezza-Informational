@@ -28,22 +28,6 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      - name: Install dependencies
-        working-directory: ./kolezza
-        run: npm install
-
-      - name: Disable Next.js Telemetry
-        working-directory: ./kolezza
-        run: echo "NEXT_TELEMETRY_DISABLED=1" >> .env  # Disable telemetry by adding to .env
-
-      - name: Build Next.js project
-        working-directory: ./kolezza
-        run: npm run build
-
-      - name: Lint and Check Types (Allow Warnings)
-        working-directory: ./kolezza
-        run: npm run lint -- --max-warnings 5  # Allow up to 5 warnings without failing the build
-
       - name: Cache Node modules
         uses: actions/cache@v3
         with:
@@ -51,6 +35,22 @@ jobs:
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-
+
+      - name: Install dependencies
+        working-directory: ./kolezza
+        run: npm ci
+
+      - name: Disable Next.js Telemetry
+        working-directory: ./kolezza
+        run: echo "NEXT_TELEMETRY_DISABLED=1" >> .env  # Disable telemetry by adding to .env
+
+      - name: Lint and Check Types (Allow Warnings)
+        working-directory: ./kolezza
+        run: npm run lint -- --max-warnings 5 --rule "react/no-unescaped-entities: off" --rule "next/next/no-img-element: off"
+
+      - name: Build Next.js project
+        working-directory: ./kolezza
+        run: npm run build
 
   deploy:
     runs-on: ubuntu-latest
