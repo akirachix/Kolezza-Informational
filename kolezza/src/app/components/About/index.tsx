@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 const SawaTokInfo = () => {
   return (
@@ -9,7 +10,7 @@ const SawaTokInfo = () => {
 
       <div className='flex flex-col lg:flex-row gap-8 lg:gap-28'>
         <div className='mt-8 lg:mt-16'>
-          <img src="/images/parent.avif" alt="parents image" className='block lg:hidden w-full h-auto mb-8' />
+          <Image src="/images/parent.avif" alt="parents image" className='block lg:hidden mb-8' width={549} height={549} />
 
           <h2 className='text-customDarkBlue text-[24px] md:text-[36px] lg:text-[44px] nh:text-[26px] lg:mb-10 font-nunito antialiased font-bold drop-shadow-[3px_3px_6px_rgba(0,0,0,0.5)]'>
             An outstanding fluency journey
@@ -19,12 +20,18 @@ const SawaTokInfo = () => {
             After that, the kids are awarded points according to the improvement they have made so far.
           </p>
           
-          <img src="/images/parent.avif" alt="parents image" className='hidden lg:block w-[549px] l-[748px] lg:w-[427px] h-auto mt-16 lg:mt-20' />
+          <Image src="/images/parent.avif" alt="parents image" className='hidden lg:block lg:w-[427px] h-auto mt-16 lg:mt-20' width={549} height={549} />
         </div>
 
         <div className='mt-10 lg:mt-10'>
-          <img src="/images/child.png" alt="child" className='w-full lg:w-[427px] h-auto ml-0 lg:ml-14 md:float-start' />
-          <div className='mt-6 lg:mt-[34rem]'>
+          <Image 
+            src="/images/child.jpeg" 
+            alt="child" 
+            className='w-full h-auto ml-0 lg:ml-14 md:float-start' 
+            width={540}  
+            height={540} 
+          />
+          <div className='mt-6 lg:mt-[3rem]'>
             <h1 className='text-customGreen text-[24px] md:text-[36px] lg:text-[44px] nh:text-[26px] lg:mb-10 font-nunito font-bold drop-shadow-[3px_3px_6px_rgba(0,0,0,0.5)]'>
               Unlock your child's full potential<span className='text-customDarkBlue'> in speaking fluently.</span>
             </h1>
