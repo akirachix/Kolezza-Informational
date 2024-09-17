@@ -19,7 +19,6 @@ const SawaTokInfo = () => {
             Sawatok has different modules that improve the communication abilities of kids. The modules contain images and text that the kids should say out loud.
             After that, the kids are awarded points according to the improvement they have made so far.
           </p>
-          
           <Image src="/images/parent.avif" alt="parents image" className='hidden lg:block lg:w-[427px] h-auto mt-16 lg:mt-20' width={549} height={549} />
         </div>
 
@@ -37,7 +36,7 @@ const SawaTokInfo = () => {
             </h1>
             <p className="text-[16px] md:text-[24px] lg:text-[28px] nh:text-[24px] font-nunito">
               Your kids will now be able to interact with different modules after the speech therapist unlocks them and follows every adventure on speaking fluently.
-              In addition to learning how to speak fluently, the parent can monitor their children's progress through the report issued by the speech therapist.
+              In addition to learning how to speak fluently, the parent can monitor their children&apos;s progress through the report issued by the speech therapist.
             </p>
           </div>
         </div>
