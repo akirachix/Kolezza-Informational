@@ -4,85 +4,65 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - dev        # Runs install and build on dev
-      - staging    # Runs install and build on staging
-      - main       # Runs install, build, and deploy on prod
+      - dev
+      - staging
+      - main
   pull_request:
     branches:
-      - dev      
-      - staging 
+      - dev
+      - staging
 
 jobs:
   build:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [20] 
+        node-version: [18]
 
     steps:
-      # Checkout the repository
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      # Set up Node.js
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
 
-      # Cache dependencies
-      - name: Cache node modules
-        uses: actions/cache@v3
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
-
-      # Install dependencies
       - name: Install dependencies
         working-directory: ./kolezza
-        run: npm ci  # Faster and more reliable in CI/CD environments
+        run: npm install
 
-      # Run ESLint check
-      - name: Run ESLint
-        working-directory: ./kolezza
-        run: npm run lint
-        continue-on-error: true  # To allow build even with warnings (optional)
-
-      # Build the project (allow warnings, fail on errors)
       - name: Build Next.js project
         working-directory: ./kolezza
         run: npm run build
 
+      - name: Lint and Check Types (Allow Warnings)
+        working-directory: ./kolezza
+        run: npm run lint -- --max-warnings 0  # Allow warnings without failing the build
+
   deploy:
     runs-on: ubuntu-latest
     needs: build
-    if: github.ref == 'refs/heads/main'  # Only deploy if branch is 'main'
+    if: github.ref == 'refs/heads/main'
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v2
 
-      # Install Vercel CLI
       - name: Install Vercel CLI
         working-directory: ./kolezza
         run: npm install --global vercel@latest
 
-      # Pull Vercel Environment Information
       - name: Pull Vercel Environment Information
-        working-directory: ./kolezza 
+        working-directory: ./kolezza
         run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
 
-      # Build Project Artifacts
       - name: Build Project Artifacts
-        working-directory: ./kolezza 
+        working-directory: ./kolezza
         run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
 
-      # Deploy Project Artifacts to Vercel
       - name: Deploy Project Artifacts to Vercel
-        working-directory: ./kolezza 
+        working-directory: ./kolezza
         run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
 
-      # Notify Deployment Success
       - name: Notify Deployment Success
         run: echo "Deployment to Vercel successful!"
