@@ -5,7 +5,7 @@ import { RiDoubleQuotesL, RiDoubleQuotesR } from "react-icons/ri";
 
 const Testimonials = () => {
   return (
-    <>
+    <div id="testimonials">
       <header className="text-center mt-8">
         <h1 className="font-sans text-customDarkBlue is:text-[26px] font-extrabold lg:text-[54px] text-[26px] md:text-[40px] im:text-[40px] nh:text-[54px] drop-shadow-[3px_3px_6px_rgba(0,0,0,0.5)]">
           Testimonials
@@ -51,15 +51,7 @@ const Testimonials = () => {
 
   </div>
 </section>
-
-
-
-
-
-
-
-
-    </>
+</div>
   );
 };
 export default Testimonials;
