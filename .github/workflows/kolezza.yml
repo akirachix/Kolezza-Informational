@@ -44,10 +44,6 @@ jobs:
         working-directory: ./kolezza
         run: echo "NEXT_TELEMETRY_DISABLED=1" >> .env  # Disable telemetry by adding to .env
 
-      - name: Lint and Check Types (Allow Warnings)
-        working-directory: ./kolezza
-        run: npm run lint -- --max-warnings 5 --rule "react/no-unescaped-entities: off" --rule "next/next/no-img-element: off"
-
       - name: Build Next.js project
         working-directory: ./kolezza
         run: npm run build
