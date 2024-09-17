@@ -5,43 +5,7 @@ on:
   push:
     branches:
       - dev
-      - stagingname: CI/CD for Next.js
-
-on:
-  workflow_dispatch:
-  push:
-    branches:
-      - dev
       - staging
-      - main
-  pull_request:
-    branches:
-      - dev
-      - staging
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [18]
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: ${{ matrix.node-version }}
-
-      - name: Install dependencies
-        working-directory: ./kolezza
-        run: npm install
-
-      - name: Build Next.js project
-        working-directory: ./kolezza
-
       - main
   pull_request:
     branches:
