@@ -6,12 +6,11 @@ import { RiDoubleQuotesL, RiDoubleQuotesR } from "react-icons/ri";
 const Testimonials = () => {
   return (
     <div id="testimonials">
-      <header className="text-center mt-8">
-        <h1 className="font-sans text-customDarkBlue is:text-[26px] font-extrabold lg:text-[54px] text-[26px] md:text-[40px] im:text-[40px] nh:text-[54px] drop-shadow-[3px_3px_6px_rgba(0,0,0,0.5)]">
+      <header className="text-center">
+        <h1 className="font-sans text-customDarkBlue is:text-[26px] font-extrabold lg:text-[54px] text-[26px] md:text-[40px] im:text-[40px] nh:text-[54px] drop-shadow-[3px_3px_6px_rgba(0,0,0,0.1)]">
           Testimonials
         </h1>
-      </header>
-     
+      </header>    
 
 
 <section className="pt-20 bg-customGreen pb-16 md:pt-32 md:pb-32 text-white flex flex-col px-8">
@@ -19,15 +18,17 @@ const Testimonials = () => {
   <div className="flex flex-col md:flex-row items-center justify-between w-full -mt-10 nh:ml-6">
 
  
-    <div className="flex items-center justify-center w-full mb-8 md:mb-0 lg:mr-38">
-      <Image
-        src="/images/woman.png"
-        alt="Woman"
-        width={242}
-        height={258}
-        className="w-[120px] h-[130px] md:w-[352px] md:h-[352px] nh:w-[200px] nh:h-[200px] md:rounded-full max-w-full im:w-[250px] im:h-[240px]"
-      />
-    </div>
+  <div className="flex flex-col items-center justify-center w-full mb-8 md:mb-0 lg:mr-38">
+  <Image
+    src="/images/woman.png"
+    alt="Woman"
+    width={242}
+    height={258}
+    className="w-[120px] h-[130px] md:w-[352px] md:h-[352px] nh:w-[200px] nh:h-[200px] md:rounded-full max-w-full im:w-[250px] im:h-[240px]"
+  />
+  <p className="mt-6 text-3xl font-semibold text-custom-blue text-center is:text-[24px]">Millicent Wairimu</p>
+</div>
+
 
     
     <div className="text-center md:text-left nh:text-[24px] flex flex-col justify-center w-full px-4 md:px-8 lg:px-16">
@@ -39,7 +40,7 @@ const Testimonials = () => {
           AMAZING CUSTOMER EXPERIENCE
         </h2>
       </div>
-      <p className="w-full leading-[1.2] text-[18px] font-sans  md:w-96 is:text-[18px] lg:w-[600px] nh:text-[30px] sm:text-[18px] im:text-[24px] md:text-[18px] text-left mt-4 lg:text-[32px]">
+      <p className="w-full leading-[1.2] text-[18px] font-sans  md:w-96 is:text-[18px] lg:w-[600px] nh:text-[30px] sm:text-[18px] im:text-[24px] md:text-[18px] text-left mt-4 lg:text-[28px]">
         SawaTok is really the best option.
         After doc prescribed it to me, my
         child&apos;s fluency has been improving alot!

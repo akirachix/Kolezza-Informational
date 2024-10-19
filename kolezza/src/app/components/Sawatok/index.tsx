@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 const HowSawaToWorks = () => {
   return (
     <section className="py-14 px-10 md:px-4 lg:px-10 xl:px-8">
-      <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-customDarkBlue font-bold text-center drop-shadow-[3px_3px_6px_rgba(0,0,0,0.5)] lg:mt-8 ">
+      <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-[54px] is:text-[26px] text-customDarkBlue font-bold text-center drop-shadow-[3px_3px_6px_rgba(0,0,0,0.1)] lg:mt-8 ">
         How SawaTok Works
       </h2>
       <div className="flex flex-col md:flex-row gap-0 md:gap-8 items-center justify-center md:mt-22 mx-4">
