@@ -1,7 +1,5 @@
-"use client"; // Ensure this is necessary and used correctly in your project setup
-
+"use client"; 
 const FaQs = () => {
-  // Array of FAQ items
   const faqs = [
     {
       question: "Where can I get the device?",
@@ -23,8 +21,7 @@ const FaQs = () => {
 
   return (
     <section id="faqs" className="max-w-6xl mx-auto py-12 px-8 bg-white">
-      {/* Title */}
-      <h1 className="text-center text-[26px] sm:text-[26px] md:text-[54px] lg:text-[54px] font-bold mb-6 mt-2 text-[#052049] font-nunito drop-shadow-[2px_2px_2px_rgba(0,0,0,0.5)]">
+      <h1 className="text-center text-[26px] sm:text-[26px] md:text-[54px] lg:text-[54px] font-bold mb-6 mt-2 text-[#052049] font-nunito drop-shadow-[2px_2px_2px_rgba(0,0,0,0.1)]">
         Frequently Asked Questions
       </h1>
 
@@ -32,10 +29,10 @@ const FaQs = () => {
         {faqs.map((faq, index) => (
           <div
             key={index}
-            className={`flex items-start ${index === 2 ? 'pt-0' : ''}`} // Align FAQ 3 with FAQ 4
+            className={`flex items-start ${index === 2 ? 'pt-0' : ''}`} 
           >
-            <span className="font-bold text-[35px] sm:text-[35px] md:text-[34px] lg:text-[34px] text-black mr-2 sm:mr-2 md:mr-3 lg:mr-4 font-nunito">
-              {String(index + 1).padStart(2, '0')}. {/* Automatically assign numbers */}
+            <span className="font-bold text-[35px] sm:text-[35px] md:text-[34px] lg:text-[28px] text-black mr-2 sm:mr-2 md:mr-3 lg:mr-4 font-nunito">
+              {String(index + 1).padStart(2, '0')}. 
             </span>
             <div className="mr-2 sm:mr-2 md:mr-3 lg:mr-4">
               <h2 className="font-bold text-[24px] sm:text-[24px] md:text-[30px] lg:text-[30px] font-nunito">
