@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const Landingpage = () => {
     return (
@@ -22,12 +23,14 @@ const Landingpage = () => {
                             Your child&apos;s Journey to confident communication starts here.
                         </h1>
                         
-                        <p className="text-lg im:text-2xl nh:text-2xl md:text-2xl lg:text-[28px] font-nunito text-black mb-8">
+                        <p className="im:text-2xl nh:text-2xl md:text-2xl lg:text-[28px] font-nunito text-black mb-8">
                             Sawatok is an affordable device designed for kids between the age of 4-6 years to help children communicate fluently by providing real-time feedback and support for their speech development.
                         </p>
-                        <button className="font-nunito im:text-bold im:px-20 im:py-5 sd:mb-20 font-semibold bg-customDarkBlue text-white py-4 md:py-3 lg:py-[15px] px-8 md:px-8 lg:px-[60px] text-sm md:text-md lg:text-lg rounded-[20px] mb-10 shadow-md">
-                            Buy SawaTok
-                        </button>
+                        <Link href="#contact" passHref>
+                                <button className="font-nunito im:text-bold im:px-20 im:py-5 sd:mb-20 font-semibold bg-customDarkBlue text-white py-4 md:py-3 lg:py-[15px] px-8 md:px-8 lg:px-[60px] text-sm md:text-md lg:text-lg rounded-[20px] mb-10 shadow-md">
+                                    Contact Us
+                                </button>
+                        </Link>
                     </div>
                     <div className="w-full nh:w-[520px] md:w-1/2 mt-6 md:mt-8 mb-[-20px] hidden lg:block"> 
                         <Image
@@ -63,7 +66,7 @@ const Landingpage = () => {
                             height={285}
                             className="mb-4 nh:mb-[0px] mx-auto max-w-[80%] md:max-w-[40%] lg:max-w-[70%]"
                         />
-                        <p className="text-[16px] sm:text-[16px] md:text-[24px] lg:text-[28px] mh:text-[18px] font-nunito text-customDarkBlue font-semibold">
+                        <p className="text-[16px] is:text-[16px] sm:text-[16px] md:text-[24px] lg:text-[28px] mh:text-[18px] font-nunito text-customDarkBlue font-semibold">
                             Fun & Entertainment
                         </p>
                     </div>
@@ -76,8 +79,8 @@ const Landingpage = () => {
                             height={213}
                             className="mb-4 nh:w-[140px] sd:w-[170px] mx-auto max-w-[50%] md:max-w-[40%] lg:max-w-[70%]" 
                         />
-                        <p className="text-[23px] md:text-lg nh:mb-[-130px] nh:text-[22px] lg:text-[32px] font-nunito text-customDarkBlue font-semibold mb-[-20px]">
-                            Play while Learning
+                        <p className="text-[23px] is:text-[16px] md:text-lg nh:mb-[-130px] nh:text-[22px] lg:text-[28px] font-nunito text-customDarkBlue mt-8 font-semibold mb-[-20px]">
+                            Play while learning
                         </p>
                     </div>
 
@@ -87,10 +90,10 @@ const Landingpage = () => {
                             alt="Confidence Boost"
                             width={446}
                             height={250}
-                            className="mb-4 mx-auto max-w-[80%] md:max-w-[40%] lg:max-w-[70%]" 
+                            className="mx-auto max-w-[80%] md:max-w-[40%] lg:max-w-[70%]" 
                         />
-                        <p className="text-[23px] nh:text-[22px] nh:mb-[-140px] md:text-lg lg:text-[32px] font-nunito text-customDarkBlue font-semibold">
-                            Confidence Boost
+                        <p className="text-[23px] is:text-[16px] nh:text-[22px] nh:mb-[-140px] md:text-lg lg:text-[28px] font-nunito text-customDarkBlue mt-16 font-semibold">
+                            Confidence boost
                         </p>
                     </div>
                 </div>

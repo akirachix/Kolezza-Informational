@@ -16,17 +16,26 @@ const Navbar = () => {
   const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
     e.preventDefault();
     console.log(`Trying to scroll to section: ${sectionId}`); 
+
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-      setActiveSection(sectionId);
-      setIsOpen(false);  
+      
+    const headerOffset = 100; 
+    const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+    const offsetPosition = elementPosition - headerOffset;
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth",
+    });
+    setActiveSection(sectionId);
+    setIsOpen(false); 
     } else {
       console.error(`Element with id "${sectionId}" not found`); 
     }
   };
 
-  // Close menu when window is resized to larger than mobile breakpoint
+
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth > 640) {
@@ -61,12 +70,11 @@ const Navbar = () => {
     <nav className="bg-light-sky-blue shadow-lg sticky top-0 w-full z-40" style={{ fontFamily: 'Nunito, sans-serif' }}>
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex justify-between items-center h-16">
-          {/* Logo */}
+      
           <div className="flex-shrink-0">
-            <Image src="/images/navbarlogo.png" alt="Logo" width={150} height={150} />
+            <Image src="/images/sawatokhorizontal.png" alt="Logo" width={170} height={150} />
           </div>
 
-          {/* Hamburger Menu Button (only for small screens) */}
           <div className="sm:hidden">
             <button
               onClick={toggleMenu}
@@ -81,7 +89,6 @@ const Navbar = () => {
             </button>
           </div>
 
-          {/* Menu Links */}
           <div
             className={`sm:flex sm:flex-row sm:space-x-4 sm:items-center ${
               isOpen ? "flex flex-col fixed inset-x-0 top-16 bg-white shadow-lg text-left py-4 space-y-4 sm:relative sm:top-0 sm:shadow-none sm:py-0 sm:space-y-0" : "hidden sm:flex"
